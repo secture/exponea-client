@@ -9,7 +9,7 @@ export class ExponeaWrapper {
 
     constructor(apiKey: string, apiSecret: string){
         this.request = axios.create({
-            baseURL: process.env.EXPONEA_URL,
+            baseURL: "https://api.exponea.com",
             headers: {
                 ContentType: 'application/json',
                 Accept: 'application/json',

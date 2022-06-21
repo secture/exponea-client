@@ -1,17 +1,16 @@
-import type { AxiosResponse } from 'axios';
 import {
     AddEventOptions,
     BatchCommandsOptions,
-    CatalogItemPartialUpdateOptions,
+    // CatalogItemPartialUpdateOptions,
     CreateCatalogOptions,
     CustomerAttributesOptions,
     CustomerPropertiesOptions,
-    DeleteAllCatalogItemsOptions,
-    DeleteCatalogItemOptions,
+    // DeleteAllCatalogItemsOptions,
+    // DeleteCatalogItemOptions,
     ExportAllCustomersOptions,
     ExportCustomerOptions,
     ExportEventsOptions,
-    UpdateCatalogItemOptions,
+    // UpdateCatalogItemOptions,
     UpdateCatalogOptions
 } from './requestOptions';
 import { BatchCommandsResponse,
@@ -74,16 +73,16 @@ export interface ExponeaLibrary {
         put: (input: UpdateCatalogOptions) => Promise<UpdateCatalogResponse | ErrorResponse>;
         delete: () => Promise<DeleteCatalogResponse | ErrorResponse>;
     },
-    "/data/v2/projects/{projectToken}/catalogs/{catalogId}/items": {
-        get: () => Promise<GetCatalogItemsResponse | ErrorResponse>;
-        delete: (input: DeleteAllCatalogItemsOptions) => Promise<DeleteAllCatalogItemsResponse | ErrorResponse>;
-    },
-    "/data/v2/projects/{projectToken}/catalogs/{catalogId}/items/{itemId}": {
-        get: () => Promise<GetCatalogItemResponse | ErrorResponse>;
-        put: (input: UpdateCatalogItemOptions) => Promise<UpdateCatalogItemResponse | ErrorResponse>;
-        delete: (input: DeleteCatalogItemOptions) => Promise<DeleteCatalogItemResponse | ErrorResponse>;
-    },
-    "/data/v2/projects/{projectToken}/catalogs/{catalogId}/items/{itemId}/partial-update": {
-        post: (input: CatalogItemPartialUpdateOptions) => Promise<CatalogItemPartialUpdateResponse | ErrorResponse>;
-    },
+    // "/data/v2/projects/{projectToken}/catalogs/{catalogId}/items": {
+    //     get: () => Promise<GetCatalogItemsResponse | ErrorResponse>;
+    //     delete: (input: DeleteAllCatalogItemsOptions) => Promise<DeleteAllCatalogItemsResponse | ErrorResponse>;
+    // },
+    // "/data/v2/projects/{projectToken}/catalogs/{catalogId}/items/{itemId}": {
+    //     get: () => Promise<GetCatalogItemResponse | ErrorResponse>;
+    //     put: (input: UpdateCatalogItemOptions) => Promise<UpdateCatalogItemResponse | ErrorResponse>;
+    //     delete: (input: DeleteCatalogItemOptions) => Promise<DeleteCatalogItemResponse | ErrorResponse>;
+    // },
+    // "/data/v2/projects/{projectToken}/catalogs/{catalogId}/items/{itemId}/partial-update": {
+    //     post: (input: CatalogItemPartialUpdateOptions) => Promise<CatalogItemPartialUpdateResponse | ErrorResponse>;
+    // },
 }

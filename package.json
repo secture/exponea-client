@@ -1,6 +1,5 @@
 {
   "name": "exponea-client",
-  "private": true,
   "version": "1.0.0",
   "description": "client for the exponea API",
   "license": "MIT",
@@ -20,7 +19,6 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
-    "dotenv": "^16.0.0",
     "rimraf": "^3.0.2"
   },
   "devDependencies": {
