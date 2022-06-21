@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+      "module": "commonjs",
+      "target": "ES2017",
+      "outDir": "./lib",
+      "sourceMap": true,
+      "declaration": true,
+      "removeComments": true,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "allowSyntheticDefaultImports": true,
+      "baseUrl": "./",
+      "incremental": true,
+      "resolveJsonModule": true,
+      "esModuleInterop": true
+    },
+    "exclude": ["node_modules", "lib", "**/__tests__/*"]
+  }
+  
