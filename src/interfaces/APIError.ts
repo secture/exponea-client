@@ -1,21 +1,19 @@
 class APIError extends Error {
+  private msg: string;
+  private code: number;
 
-    private msg: string;
-    private code: number;
+  constructor(code: number, messages: string[]) {
+    const msg = messages.join(';\n');
 
-    constructor(code: number, messages: string[]) {
+    super(msg);
 
-        const msg = messages.join(";\n");
+    this.msg = msg;
+    this.code = code;
+    this.msg = msg;
+    Object.setPrototypeOf(this, APIError.prototype);
+  }
 
-        super(msg);
-
-        this.msg = msg;
-        this.code = code;
-        this.msg = msg;
-        Object.setPrototypeOf(this, APIError.prototype);
-    }
-
-    print() {
-        return `Error ${this.code}: \n${this.msg}`;
-    }
+  print() {
+    return `Error ${this.code}: \n${this.msg}`;
+  }
 }

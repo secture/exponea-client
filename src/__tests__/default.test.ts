@@ -1,3 +1,3 @@
 test('Default test', () => {
-    expect("default").toBe("default");
+  expect('default').toBe('default');
 });

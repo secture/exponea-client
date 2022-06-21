@@ -1,6 +1,6 @@
 {
   "name": "exponea-client",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "client for the exponea API",
   "license": "MIT",
   "main": "lib/ExponeaAPI.js",
@@ -10,12 +10,12 @@
     "build": "rimraf ./dilibst && tsc",
     "start": "npm run build && node lib/index.js",
     "prepare": "npm run build",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
     "prepublishOnly": "npm test && npm run lint",
-    "preversion" : "npm run lint",
-    "version" : "npm run format && git add -A src",
-    "postversion" : "git push && git push --tags"
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "dependencies": {
     "axios": "^0.27.2",
@@ -41,6 +41,10 @@
   "files": [
     "lib/**/*"
   ],
-  "keywords": ["exponea", "client", "CRM"],
+  "keywords": [
+    "exponea",
+    "client",
+    "CRM"
+  ],
   "author": "Secture"
 }
