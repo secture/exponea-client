@@ -1,5 +1,5 @@
-import dts from 'rollup-plugin-dts';export default [
-    ...
+import dts from 'rollup-plugin-dts';
+export default [
     {
         input: 'lib/index.d.ts',
         output: {
