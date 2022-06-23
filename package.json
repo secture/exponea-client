@@ -3,8 +3,8 @@
   "version": "1.0.10",
   "description": "client for the exponea API",
   "license": "MIT",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "rimraf ./lib && tsc",
