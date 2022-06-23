@@ -42,7 +42,7 @@ const eventResponse = await api.addEvent({
         category: "brand",
         source: "web",
     },
-    update_timestamp: new Date().getTime(),
+    timestamp: new Date().getTime(),
     event_type: "consent",
 });
 ```
