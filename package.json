@@ -3,8 +3,8 @@
   "version": "1.0.11",
   "description": "client for the exponea API",
   "license": "MIT",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "exponea-client.js",
+  "types": "exponea-client.d.ts",
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "rimraf ./lib && tsc",
@@ -23,6 +23,7 @@
     "rollup-plugin-dts": "^4.2.2"
   },
   "devDependencies": {
+    "@rollup/plugin-typescript": "^8.3.3",
     "@types/jest": "^28.1.2",
     "@types/node": "^14.17.7",
     "@typescript-eslint/eslint-plugin": "^4.29.0",
@@ -41,8 +42,9 @@
     "typescript": "^4.3.5"
   },
   "files": [
-    "index.js",
-    "index.d.ts"
+    "exponea-client.js",
+    "exponea-client.d.ts",
+    "exponea-client.js.map"
   ],
   "keywords": [
     "exponea",

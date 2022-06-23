@@ -1,16 +1,23 @@
-import dts from 'rollup-plugin-dts';
-export default [
-    {
-        input: 'lib/index.js',
-        output: {
-            file: 'index.js'
-        }
+import typescript from '@rollup/plugin-typescript';
+import dts from "rollup-plugin-dts";
+
+const config = [
+  {
+    input: 'lib/index.js',
+    output: {
+      file: 'exponea-client.js',
+      format: 'cjs',
+      sourcemap: true,
     },
-    {
-        input: 'lib/index.d.ts',
-        output: {
-            file: 'index.d.ts'
-        },
-        plugins: [dts()]
-    }
-]
+    plugins: [typescript()]
+  }, {
+    input: 'lib/index.d.ts',
+    output: {
+      file: 'exponea-client.d.ts',
+      format: 'es'
+    },
+    plugins: [dts()]
+  }
+];
+
+export default config;
