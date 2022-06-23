@@ -3,6 +3,13 @@ import dts from "rollup-plugin-dts";
 
 const config = [
   {
+    input: 'lib/public.js',
+    output: {
+      file: 'public.js',
+      format: 'cjs',
+    },
+    plugins: [typescript()]
+  }, {
     input: 'lib/index.js',
     output: {
       file: 'exponea-client.js',
