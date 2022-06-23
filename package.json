@@ -1,6 +1,6 @@
 {
   "name": "exponea-client",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "client for the exponea API",
   "license": "MIT",
   "main": "exponea-client.js",
