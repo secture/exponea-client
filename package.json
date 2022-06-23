@@ -44,7 +44,8 @@
   "files": [
     "exponea-client.js",
     "exponea-client.d.ts",
-    "exponea-client.js.map"
+    "exponea-client.js.map",
+    "public.js"
   ],
   "keywords": [
     "exponea",
