@@ -1,4 +1,4 @@
-import { Attribute, CatalogField, Command, Filter } from "./helper";
+import { Attribute, CatalogField, Command, Filter } from './helper';
 
 export interface RequestOptions {
   body?: unknown;
