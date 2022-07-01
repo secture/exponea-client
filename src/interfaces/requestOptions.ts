@@ -1,3 +1,5 @@
+import { Attribute, CatalogField, Command, Filter } from "./helper";
+
 export interface RequestOptions {
   body?: unknown;
   queryParameters?: Record<string, string>;

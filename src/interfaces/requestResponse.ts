@@ -1,4 +1,5 @@
 import { AxiosResponse } from 'axios';
+import { AttributeResult, CommandResult, DataResult, EventResult, IDResult } from './helper';
 
 export interface Response extends AxiosResponse {
   status: number;
