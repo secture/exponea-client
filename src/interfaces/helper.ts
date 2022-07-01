@@ -1,50 +1,50 @@
-interface Command {
+export interface Command {
   name: string;
   data: unknown;
   command_id?: string;
 }
 
-interface CommandResult {
+export interface CommandResult {
   success: boolean;
   time: number;
 }
 
-interface Attribute {
+export interface Attribute {
   type: string;
   property?: string;
   id?: string;
   list?: unknown[];
 }
 
-interface AttributeResult {
+export interface AttributeResult {
   success: boolean;
   value: string;
 }
 
-interface IDResult {
+export interface IDResult {
   cookie: string[];
   registered: string[];
 }
 
-interface EventResult {
+export interface EventResult {
   type: string;
   timestamp: number;
   properties: unknown;
 }
 
-interface Filter {
+export interface Filter {
   type: string;
   segmentation_id: string;
   segment_index: number;
 }
 
-interface DataResult {
+export interface DataResult {
   type: string;
   timestamp: number;
   properties: unknown;
 }
 
-interface CatalogField {
+export interface CatalogField {
   name: string;
   type?: string;
   searchable?: boolean;
