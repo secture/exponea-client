@@ -44,16 +44,16 @@ export class ExponeaAPI {
     }
   }
 
-  // public async updateCustomerProperties(properties: CustomerPropertiesBody): Promise<void> {
-  //   const response = await this.wrapper.path('/track/v2/projects/{projectToken}/customers', this.projectToken).post({
-  //     body: properties,
-  //   });
+  public async updateCustomerProperties(properties: CustomerPropertiesBody): Promise<void> {
+    const response = await this.wrapper.path('/track/v2/projects/{projectToken}/customers', this.projectToken).post({
+      body: properties,
+    });
 
-  //   if (response.status !== 200) {
-  //     response.data.errors.push(response.data.error);
-  //     throw new APIError(response.status, response.data.errors);
-  //   }
-  // }
+    if (response.status !== 200) {
+      response.data.errors.push(response.data.error);
+      throw new APIError(response.status, response.data.errors);
+    }
+  }
 
   public async addEvent(event: AddEventBody): Promise<void> {
     const response = await this.wrapper

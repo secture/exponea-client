@@ -8,7 +8,6 @@ export interface RequestOptions {
 export interface CustomerPropertiesBody {
   customer_ids: unknown;
   properties: unknown;
-  update_timestamp?: number;
 }
 
 export interface CustomerPropertiesOptions extends RequestOptions {
