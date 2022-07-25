@@ -46,5 +46,8 @@
     "client",
     "CRM"
   ],
-  "author": "Secture"
+  "author": "Secture",
+  "publishConfig": {
+    "access": "public"
+  }
 }
