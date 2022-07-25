@@ -1,3 +1,4 @@
+import { APIError } from './interfaces/APIError';
 import {
   AddEventBody,
   CustomerPropertiesBody,
@@ -22,7 +23,6 @@ export class ExponeaAPI {
 
     try {
       this.wrapper = new ExponeaWrapper(apiKey, apiSecret);
-      const systemTime = this.getSystemTime();
     } catch (e) {
       throw e;
     }

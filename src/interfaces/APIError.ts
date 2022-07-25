@@ -1,4 +1,4 @@
-class APIError extends Error {
+export class APIError extends Error {
   private msg: string;
   private code: number;
 
