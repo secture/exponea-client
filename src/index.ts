@@ -1,9 +1,5 @@
 import { APIError } from './interfaces/APIError';
-import {
-  AddEventBody,
-  CustomerPropertiesBody,
-  TransactionalEmailBody,
-} from './interfaces/requestOptions';
+import { AddEventBody, CustomerPropertiesBody, TransactionalEmailBody } from './interfaces/requestOptions';
 import { ExponeaWrapper } from './wrapper';
 
 export class ExponeaAPI {
@@ -66,11 +62,9 @@ export class ExponeaAPI {
   }
 
   public async sendEmail(event: TransactionalEmailBody): Promise<void> {
-    const response = await this.wrapper
-      .path("/email/v2/projects/{projectToken}/sync", this.projectToken)
-      .post({
-        body: event,
-      })
+    const response = await this.wrapper.path('/email/v2/projects/{projectToken}/sync', this.projectToken).post({
+      body: event,
+    });
 
     if (response.status !== 200) {
       response.data.errors.push(response.data.error);

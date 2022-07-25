@@ -1,43 +1,41 @@
-import { ExponeaAPI } from "../index";
+import { ExponeaAPI } from '../index';
 
-describe("Track API Endpoints", () => {
-
+describe('Track API Endpoints', () => {
   let api: ExponeaAPI;
 
   beforeAll(() => {
-    api = new ExponeaAPI("test", "test", "test");
+    api = new ExponeaAPI('test', 'test', 'test');
   });
 
-
-  it("getSystemTime showld return error", async () => {
+  it('getSystemTime showld return error', async () => {
     expect(true).toBeTruthy();
   });
 
-  it("getSystemTime showld return timestamp", async () => {
+  it('getSystemTime showld return timestamp', async () => {
     expect(true).toBeTruthy();
   });
 
-  it("updateCustomerProperties showld return error", async () => {
+  it('updateCustomerProperties showld return error', async () => {
     expect(true).toBeTruthy();
   });
 
-  it("updateCustomerProperties showld return OK", async () => {
+  it('updateCustomerProperties showld return OK', async () => {
     expect(true).toBeTruthy();
   });
 
-  it("addEvent showld return error", async () => {
+  it('addEvent showld return error', async () => {
     expect(true).toBeTruthy();
   });
 
-  it("addEvent showld return OK", async () => {
+  it('addEvent showld return OK', async () => {
     expect(true).toBeTruthy();
   });
 
-  it("sendEmail showld return error", async () => {
+  it('sendEmail showld return error', async () => {
     expect(true).toBeTruthy();
   });
 
-  it("sendEmail showld return OK", async () => {
+  it('sendEmail showld return OK', async () => {
     expect(true).toBeTruthy();
   });
 });
