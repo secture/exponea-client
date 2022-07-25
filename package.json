@@ -1,6 +1,6 @@
 {
   "name": "@secture/exponea-client",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "description": "client for the exponea API",
   "license": "MIT",
   "main": "lib/index.js",
