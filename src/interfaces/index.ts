@@ -1,25 +1,19 @@
 import {
   AddEventOptions,
   BatchCommandsOptions,
-  // CatalogItemPartialUpdateOptions,
   CreateCatalogOptions,
   CustomerAttributesOptions,
   CustomerPropertiesOptions,
-  // DeleteAllCatalogItemsOptions,
-  // DeleteCatalogItemOptions,
   ExportAllCustomersOptions,
   ExportCustomerOptions,
   ExportEventsOptions,
-  // UpdateCatalogItemOptions,
+  TransactionalEmailOptions,
   UpdateCatalogOptions,
 } from './requestOptions';
 import {
   BatchCommandsResponse,
-  CatalogItemPartialUpdateResponse,
   CreateCatalogResponse,
   CustomerAttributesResponse,
-  DeleteAllCatalogItemsResponse,
-  DeleteCatalogItemResponse,
   DeleteCatalogResponse,
   EmptySuccessResponse,
   ErrorResponse,
@@ -27,12 +21,10 @@ import {
   ExportCustomerResponse,
   ExportEventsResponse,
   GetAllCatalogsResponse,
-  GetCatalogItemResponse,
-  GetCatalogItemsResponse,
   GetCatalogNameResponse,
   SystemTimeResponse,
-  UpdateCatalogItemResponse,
   UpdateCatalogResponse,
+  TransactionalEmailResponse,
 } from './requestResponse';
 
 export interface ExponeaLibrary {
@@ -74,16 +66,8 @@ export interface ExponeaLibrary {
     put: (input: UpdateCatalogOptions) => Promise<UpdateCatalogResponse | ErrorResponse>;
     delete: () => Promise<DeleteCatalogResponse | ErrorResponse>;
   };
-  // "/data/v2/projects/{projectToken}/catalogs/{catalogId}/items": {
-  //     get: () => Promise<GetCatalogItemsResponse | ErrorResponse>;
-  //     delete: (input: DeleteAllCatalogItemsOptions) => Promise<DeleteAllCatalogItemsResponse | ErrorResponse>;
-  // },
-  // "/data/v2/projects/{projectToken}/catalogs/{catalogId}/items/{itemId}": {
-  //     get: () => Promise<GetCatalogItemResponse | ErrorResponse>;
-  //     put: (input: UpdateCatalogItemOptions) => Promise<UpdateCatalogItemResponse | ErrorResponse>;
-  //     delete: (input: DeleteCatalogItemOptions) => Promise<DeleteCatalogItemResponse | ErrorResponse>;
-  // },
-  // "/data/v2/projects/{projectToken}/catalogs/{catalogId}/items/{itemId}/partial-update": {
-  //     post: (input: CatalogItemPartialUpdateOptions) => Promise<CatalogItemPartialUpdateResponse | ErrorResponse>;
-  // },
+  // email api
+  '/email/v2/projects/{projectToken}/sync': {
+    post: (input: TransactionalEmailOptions) => Promise<TransactionalEmailResponse | ErrorResponse>;
+  };
 }

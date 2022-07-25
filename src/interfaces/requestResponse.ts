@@ -131,3 +131,8 @@ export interface CatalogItemPartialUpdateResponse extends Response {
   status: 200;
   data: unknown;
 }
+
+export interface TransactionalEmailResponse extends Response {
+  status: 200;
+  data: unknown;
+}

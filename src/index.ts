@@ -1,11 +1,8 @@
 import {
   AddEventBody,
-  CustomerAttributesBody,
   CustomerPropertiesBody,
-  ExportAllCustomersBody,
-  ExportEventsBody,
+  TransactionalEmailBody,
 } from './interfaces/requestOptions';
-import { BatchCommandResponseData, ExportCustomerData } from './interfaces/requestResponse';
 import { ExponeaWrapper } from './wrapper';
 
 export class ExponeaAPI {
@@ -68,82 +65,16 @@ export class ExponeaAPI {
     }
   }
 
-  // public async batchCommand(commands: Command[]): Promise<BatchCommandResponseData> {
-  //   const response = await this.wrapper.path('/track/v2/projects/{projectToken}/batch', this.projectToken).post({
-  //     body: {
-  //       commands,
-  //     },
-  //   });
+  public async sendEmail(event: TransactionalEmailBody): Promise<void> {
+    const response = await this.wrapper
+      .path("/email/v2/projects/{projectToken}/sync", this.projectToken)
+      .post({
+        body: event,
+      })
 
-  //   if (response.status !== 200) {
-  //     response.data.errors.push(response.data.error);
-  //     throw new APIError(response.status, response.data.errors);
-  //   } else {
-  //     return response.data;
-  //   }
-  // }
-
-  // // Customer API
-
-  // public async retrieveCustomerAttributes(attributes: CustomerAttributesBody): Promise<AttributeResult[]> {
-  //   const response = await this.wrapper
-  //     .path('/data/v2/projects/{projectToken}/customers/attributes', this.projectToken)
-  //     .post({
-  //       body: attributes,
-  //     });
-
-  //   if (response.status !== 200) {
-  //     response.data.errors.push(response.data.error);
-  //     throw new APIError(response.status, response.data.errors);
-  //   } else {
-  //     return response.data.results;
-  //   }
-  // }
-
-  // public async exporAlltCustomer(exportProperties: ExportAllCustomersBody): Promise<unknown> {
-  //   const response = await this.wrapper
-  //     .path('/data/v2/projects/{projectToken}/customers/export', this.projectToken)
-  //     .post({
-  //       body: exportProperties,
-  //     });
-
-  //   if (response.status !== 200) {
-  //     response.data.errors.push(response.data.error);
-  //     throw new APIError(response.status, response.data.errors);
-  //   } else {
-  //     return response.data;
-  //   }
-  // }
-
-  // public async exportCustomer(customerIds: string[]): Promise<ExportCustomerData> {
-  //   const response = await this.wrapper
-  //     .path('/data/v2/projects/{projectToken}/customers/export-one', this.projectToken)
-  //     .post({
-  //       body: {
-  //         customer_ids: customerIds,
-  //       },
-  //     });
-
-  //   if (response.status !== 200) {
-  //     response.data.errors.push(response.data.error);
-  //     throw new APIError(response.status, response.data.errors);
-  //   } else {
-  //     return response.data;
-  //   }
-  // }
-
-  // public async exportEvent(exportEventProperties: ExportEventsBody): Promise<DataResult[]> {
-  //   const response = await this.wrapper
-  //     .path('/data/v2/projects/{projectToken}/customers/events', this.projectToken)
-  //     .post({
-  //       body: exportEventProperties,
-  //     });
-
-  //   if (response.status !== 200) {
-  //     response.data.errors.push(response.data.error);
-  //     throw new APIError(response.status, response.data.errors);
-  //   } else {
-  //     return response.data.data;
-  //   }
-  // }
+    if (response.status !== 200) {
+      response.data.errors.push(response.data.error);
+      throw new APIError(response.status, response.data.errors);
+    }
+  }
 }

@@ -85,18 +85,48 @@ export interface UpdateCatalogOptions extends RequestOptions {
   };
 }
 
-// export interface DeleteAllCatalogItemsOptions extends RequestOptions {
+export interface TransactionalEmailSettings {
+  custom_event_properties?: unknown;
+  custom_headers?: unknown;
+  url_params?: unknown;
+  transfer_user_identity?: string;
+}
 
-// }
+export interface TransactionalEmailIntegration {
+  id: string;
+  sender_address: string;
+}
 
-// export interface UpdateCatalogItemOptions extends RequestOptions {
+export interface TransactionalEmailRecipient {
+  email?: string;
+  customer_ids: unknown;
+  language?: string;
+}
 
-// }
+export interface TransactionalEmailAttachment {
+  filename: string;
+  content: string;
+  content_type: string;
+}
 
-// export interface DeleteCatalogItemOptions extends RequestOptions {
+export interface TransactionalEmailContent {
+  template_id: string;
+  sender_address?: string;
+  sender_name?: string;
+  params?: unknown;
+  attachments?: TransactionalEmailAttachment[];
+}
 
-// }
+export interface TransactionalEmailBody {
+  integration_id?: string;
+  integrations?: TransactionalEmailIntegration[];
+  email_content: TransactionalEmailContent;
+  campaign_name: string;
+  recipient: TransactionalEmailRecipient;
+  transfer_identity?: string;
+  settings?: TransactionalEmailSettings;
+}
 
-// export interface CatalogItemPartialUpdateOptions extends RequestOptions {
-
-// }
+export interface TransactionalEmailOptions extends RequestOptions {
+  body: TransactionalEmailBody;
+}
