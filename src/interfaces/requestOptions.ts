@@ -17,7 +17,7 @@ export interface CustomerPropertiesOptions extends RequestOptions {
 export interface AddEventBody {
   customer_ids: unknown;
   properties: unknown;
-  timestamp?: string;
+  timestamp?: number;
   event_type: string;
 }
 
